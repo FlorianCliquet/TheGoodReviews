@@ -18,7 +18,7 @@ if (!isset($_SESSION["user"])) {
 <body>
     <div class="container">
         <h1>Qu'est ce que je vasi faire de tout cette osseille ?</h1>
-        <a href="/src/login-register/logout.php" class="btn btn-warning">Logout</a>
+        <a href="/TheGoodReviews/src/login-register/logout.php" class="btn btn-warning">Logout</a>
     </div>
 </body>
 </html>
