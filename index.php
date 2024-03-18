@@ -1,10 +1,17 @@
 <?php
 session_start();
-if (!isset($_SESSION["user"])) {
-   header("Location: /TheGoodReviews/src/login-register/login.php");
-   exit; // Ensure the script stops executing after the redirect
+
+if (isset($_SESSION["user"])) {
+    if ($_SESSION["admin"]) {
+        header("Location: /TheGoodReviews/src/dashboards/admin_dashboard.php");
+    } else {
+        header("Location: /TheGoodReviews/src/dashboards/user_dashboard.php");
+    }
+} else {
+    header("Location: /TheGoodReviews/src/dashboards/public_dashboard.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
