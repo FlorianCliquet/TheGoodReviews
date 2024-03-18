@@ -35,6 +35,7 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
     <title>Reset Password</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    
 </head>
 <body>
 

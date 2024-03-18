@@ -52,9 +52,20 @@ $user = mysqli_fetch_assoc($result);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Profile</title>
+    <title>TheGoodReviews - User Profile</title>
+    <link rel="stylesheet" href="profil.css">
 </head>
 <body>
+<nav class="glassmorphism-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="../user/profil.php">Profil</a></li>
+            <li><a href="../login-register/logout.php">Logout</a></li>
+        </ul>
+    </nav>
     <h1>User Profile</h1>
     <h2>Welcome, <?php echo $user['full_name']; ?>!</h2> <!-- Corrected column name -->
 

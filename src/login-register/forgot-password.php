@@ -3,20 +3,31 @@
 <head>
     <title>Forgot Password</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link href="style.css" rel="stylesheet">
+    <link href="modal.css" rel="stylesheet">
 </head>
 <body>
+<nav class="glassmorphism-nav">
+    <ul>
+        <li><a href="../../index.php">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
+    </ul>
+</nav>
 
-    <h1>Forgot Password</h1>
+<h1>Forgot Password</h1>
 
-    <form method="post" action="send-password-reset.php">
+<form action="send-password-reset.php" method="post">
 
-        <label for="email">email</label>
-        <input type="email" name="email" id="email">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
 
-        <button>Send</button>
+    <button type="submit">Send</button>
 
-    </form>
+</form>
 
 </body>
 </html>

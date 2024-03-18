@@ -12,10 +12,12 @@ if (isset($_SESSION["user"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="showcase">
+    <div class="video-container">
+        <video src="../../media/loginbackground.mp4" autoplay muted loop id="myVideo"></video>
     <div class="container">
         <?php
         if (isset($_POST["login"])) {
@@ -38,12 +40,18 @@ if (isset($_SESSION["user"])) {
             }
         }
         ?>
+    </div>
+    </div>
+    <div class="login-box">
+        <h2>Login</h2>
       <form action="login.php" method="post">
-        <div class="form-group">
-            <input type="email" placeholder="Enter Email:" name="email" class="form-control">
+        <div class="user-box">
+            <input type="email" name="email" required="">
+            <label>Email</label>
         </div>
-        <div class="form-group">
-            <input type="password" placeholder="Enter Password:" name="password" class="form-control">
+        <div class="user-box">
+            <input type="password" name="password" required="">
+            <label>Password</label>
         </div>
         <div class="form-btn">
             <input type="submit" value="Login" name="login" class="btn btn-primary">
@@ -52,5 +60,6 @@ if (isset($_SESSION["user"])) {
      <div><p>Not registered yet <a href="register.php">Register Here</a></p></div>
      <div><p>Forgot password <a href="forgot-password.php">Reset Here</a></p></div>
     </div>
+</div>
 </body>
 </html>

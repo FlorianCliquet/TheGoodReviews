@@ -11,10 +11,9 @@ if (!$conn) {
 
 $mysqli = new mysqli($hostName, $dbUser, $dbPassword, $dbName);
 
-// Check connection
-if ($mysqli->connect_error) {
+/*if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
-}
+}*/
 return $mysqli;
 
 ?>

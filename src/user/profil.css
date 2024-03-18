@@ -1,0 +1,96 @@
+body {
+    background-color: white;
+    color: #333;
+    font-family: "Open Sans", sans-serif;
+    overflow: auto;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+h1 {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+main {
+    padding: 20px;
+}
+
+  h1 span {
+    display: block;
+    font-size: 0.5em;
+    line-height: 1.3;
+  }
+  h1 em {
+    font-style: normal;
+    font-weight: 600;
+  }
+.glassmorphism-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 100px;
+    padding: 20px;
+    height: 15px;
+    width: 50%;
+    max-width: 500px;
+    top: 0;
+    position: sticky;
+    z-index: 999;
+}
+
+.glassmorphism-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.glassmorphism-nav a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    padding: 10px;
+    z-index: 1;
+}
+
+.glassmorphism-nav a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px);
+    border-radius: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1; /* rec behind the text */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.glassmorphism-nav a:hover::before {
+    opacity: 1;
+}
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+}
