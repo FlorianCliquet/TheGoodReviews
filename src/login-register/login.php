@@ -29,6 +29,7 @@ if (isset($_SESSION["user"])) {
             $user = $result->fetch_assoc();
             if ($user && password_verify($password, $user["password"])) {
                 $_SESSION["user"] = "yes";
+                $_SESSION["user_email"] = $user["email"];
                 echo "<div class='alert alert-danger'>Login successfully</div>";
                 header("Location: /TheGoodReviews/index.php");
                 exit;
@@ -49,6 +50,7 @@ if (isset($_SESSION["user"])) {
         </div>
       </form>
      <div><p>Not registered yet <a href="register.php">Register Here</a></p></div>
+     <div><p>Forgot password <a href="forgot-password.php">Reset Here</a></p></div>
     </div>
 </body>
 </html>

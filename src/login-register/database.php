@@ -6,7 +6,15 @@ $dbPassword = "";
 $dbName = "TheGoodReviews";
 $conn = mysqli_connect($hostName, $dbUser, $dbPassword, $dbName);
 if (!$conn) {
-    die("Something went wrong;");
+    die("Connection failed: " . mysqli_connect_error());
 }
+
+$mysqli = new mysqli($hostName, $dbUser, $dbPassword, $dbName);
+
+// Check connection
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+return $mysqli;
 
 ?>
