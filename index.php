@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>tête de neuille</h1>
-    <a href="src/register/register.php">Register</a>
+    <a href="src/login-register/register.php">Register</a>
 <?php
 ?>
 </body>
