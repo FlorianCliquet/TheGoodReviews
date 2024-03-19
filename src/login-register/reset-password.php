@@ -21,11 +21,13 @@ $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
 if ($user === null) {
-    die("token not found");
+    header("Location: forgot-password.php?message=Token%20invalid");
+    exit(); 
 }
 
 if (strtotime($user["reset_token_expires_at"]) <= time()) {
-    die("token has expired");
+    header("Location: forgot-password.php?message=Token%20has%20expired");
+    exit(); 
 }
 
 ?>
