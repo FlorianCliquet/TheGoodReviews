@@ -14,7 +14,6 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="../login-register/login.php">Login</a></li>
-            <li><a href="../login-register/register.php">Register</a></li>
         </ul>
     </nav>
     <main>
