@@ -44,7 +44,7 @@ body{
 .login-box h2{
     margin: 0 0 30px;
     padding: 0;
-    color: #fff;
+    color: #03a9f4;
     text-align: center;
 }
 
@@ -105,3 +105,135 @@ body{
                 0 0 50px #03a9f4,
                 0 0 100px #03a9f4;
 }
+.btn--login {
+  position: relative; 
+  top: -15px;
+  --b: 3px;  
+  --s: .45em; 
+  --color: #03a9f4;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn--login:hover,
+.btn--login:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.btn--login:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.btn--forgotpassword {
+  position:absolute;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+  will-change: transform;
+  top: calc(100% - 50px);
+}
+
+.btn--forgotpassword:disabled {
+  pointer-events: none;
+}
+
+.btn--forgotpassword:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.btn--forgotpassword:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.btn--register {
+    position:absolute;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+    will-change: transform;
+    top: calc(100% - 50px);
+    right: calc(100% - 200px);
+  }
+  
+  .btn--register:disabled {
+    pointer-events: none;
+  }
+  
+  .btn--register:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .btn--register:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  .btn--forgotpassword a,
+  .btn--register a {
+    text-decoration: none;
+    color: #fff !important; 
+  }

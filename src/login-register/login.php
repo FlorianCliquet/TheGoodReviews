@@ -53,12 +53,16 @@ if (isset($_SESSION["user"])) {
             <input type="password" name="password" required="">
             <label>Password</label>
         </div>
-        <div class="form-btn">
-            <input type="submit" value="Login" name="login" class="btn btn-primary">
+        <div class="btn">
+            <input type="submit" value="Login" name="login" class="btn--login">
         </div>
       </form>
-     <div><p>Not registered yet <a href="register.php">Register Here</a></p></div>
-     <div><p>Forgot password <a href="forgot-password.php">Reset Here</a></p></div>
+      <div class="form-btn">
+            <button type="button" class="btn--register"><a href="register.php">Register Here</a></button>
+        </div>
+        <div class="form-btn">
+            <button type="button" class="btn--forgotpassword"><a href="forgot-password.php">Forgot password?</a></button>
+        </div>
     </div>
 </div>
 </body>
