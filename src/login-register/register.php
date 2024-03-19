@@ -15,17 +15,9 @@ if (isset($_SESSION["user"])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="glassmorphism-nav">
-        <ul>
-            <li><a href="../../index.php">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="register.php">Register</a></li>
-        </ul>
-    </nav>
-<div class="parent-container">
+<div class="showcase">
+<div class="video-container">
+    <video src="../../media/loginbackground.mp4" autoplay muted loop id="myVideo"></video>
     <div class="container">
         <?php
         if (isset($_POST["submit"])) {
@@ -75,26 +67,34 @@ if (isset($_SESSION["user"])) {
            }
         }
         ?>
+        </div>
+        </div>
+    <div class="login-box">
+        <h2>Register</h2>
         <form action="register.php" method="post">
-            <div class="form-group">
-                <input type="text" class="form-control" name="fullname" placeholder="Full Name:">
+            <div class="user-box">
+                <input type="text" name="fullname" required="">
+                <label>Full Name</label> 
             </div>
-            <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email:">
+            <div class="user-box">
+                <input type="email" name="email" required="">
+                <label>Email</label>
             </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="password" placeholder="Password:">
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
             </div>
-            <div class="form-group">
-                <input type="password" class="form-control" name="repeat_password" placeholder="Repeat Password:">
+            <div class="user-box">
+                <input type="password" name="repeat_password" required="">
+                <label>Repeat Password</label>
             </div>
-            <div class="form-btn">
-                <input type="submit" class="btn btn-primary" value="Register" name="submit">
+            <div class="btn">
+                <input type="submit" class="btn--login" value="Register" name="submit">
             </div>
         </form>
-        <div>
-        <div><p>Already Registered <a href="login.php">Login Here</a></p></div>
-      </div>
+        <div class="form-btn">
+        <a href="login.php" class="btn--sub-login">Login Here</a>
+        </div>  
     </div>
     </div>
 </body>
