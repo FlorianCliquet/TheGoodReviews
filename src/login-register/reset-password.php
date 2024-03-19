@@ -34,26 +34,91 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
 <head>
     <title>Reset Password</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for pop-up */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid black;
+            z-index: 1000;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-
-    <h1>Reset Password</h1>
-
-    <form method="post" action="process-reset-password.php">
-
-        <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
-
-        <label for="password">New password</label>
-        <input type="password" id="password" name="password">
-
-        <label for="password_confirmation">Repeat password</label>
-        <input type="password" id="password_confirmation"
-               name="password_confirmation">
-
-        <button>Send</button>
+<div class="showcase">
+    <div class="video-container">
+        <video src="../../media/loginbackground.mp4" autoplay muted loop id="myVideo"></video>
+    <div>
+</div>
+<div class="container">
+    <form id="resetForm" method="post" action="process-reset-password.php">
+        <div class="login-box">
+            <h2>Reset Password</h2>
+            <div class="user-box">
+                <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
+                <label for="password">New password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="user-box">
+                <label >Repeat password</label>
+                <input type="password" id="password_confirmation" name="password_confirmation">
+            </div>
+            <div class="btn">
+                <input type="submit" value="Send" name="Send" class="btn btn--login">
+            </div>
+        </div>
     </form>
+</div>
+
+<!-- Pop-up div for showing success/failure message -->
+<div id="popup" class="popup">
+    <span id="popupMessage"></span>
+</div>
+
+<script>
+    // JavaScript to show pop-up message
+    document.getElementById("resetForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        var form = this;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Show pop-up with the response message
+            showPopup(data);
+            // Reset form after successful submission
+            form.reset();
+            // Redirect to login.php after 3 seconds
+            setTimeout(function() {
+                window.location.href = "login.php";
+            }, 3000); // 3000 milliseconds = 3 seconds
+        })
+        .catch(error => console.error('Error:', error));
+    });
+
+    function showPopup(message) {
+        var popup = document.getElementById("popup");
+        var popupMessage = document.getElementById("popupMessage");
+        popupMessage.textContent = message;
+        popup.style.display = "block";
+
+        // Hide pop-up after 6 seconds
+        setTimeout(function() {
+            popup.style.display = "none";
+        }, 6000); // 6000 milliseconds = 6 seconds
+    }
+</script>
 
 </body>
 </html>
