@@ -59,8 +59,10 @@ if (isset($_SESSION["user"])) {
                     echo "<div class='alert alert-danger'>$error</div>";
                 }
                } else {
-                $stmt = $conn->prepare("INSERT INTO users (full_name, email, password) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $fullName, $email, $passwordHash);
+                $dateCreation = date("Y-m-d H:i:s");
+
+                $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, datecreation) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("ssss", $fullName, $email, $passwordHash, $dateCreation);
                 if ($stmt->execute()) {
                     echo "<div class='alert alert-success'>You are registered successfully.</div>";
                 } else {

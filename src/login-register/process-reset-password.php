@@ -50,11 +50,11 @@ $sql = "UPDATE users
         SET password = ?,
             reset_token_hash = NULL,
             reset_token_expires_at = NULL
-        WHERE id = ?";
+        WHERE email = ?";
 
 $stmt = $mysqli->prepare($sql);
 
-$stmt->bind_param("ss", $password, $user["id"]);
+$stmt->bind_param("ss", $password, $user["email"]);
 
 $stmt->execute();
 
