@@ -1,0 +1,227 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    font-family: "Neue Montreal";
+}
+
+.pre-loader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 400px;
+    z-index: 2;
+    color: #fff;
+
+}
+
+.count {
+    flex: 2;
+    text-align: right;
+    line-height: 1;
+    padding: 0 1em;
+}
+
+.copy {
+    flex: 13;
+    font-family: "PP Editorial Old";
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.ml16 {
+    overflow: hidden;
+}
+
+.ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.loader-bg {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #2200d0;
+    z-index: -1;
+}
+
+.loader-2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(hero.gif) no-repeat 50% 50%;
+    background-size: cover;
+    z-index: -1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.site-content {
+    position: relative;
+    z-index: -2;
+}
+
+.glassmorphism-nav {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.2 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 100px;
+    padding: 20px;
+    height: 15px;
+    width: 50%;
+    max-width: 500px;
+    top: 0;
+    position: sticky;
+    z-index: 9999;
+}
+
+.glassmorphism-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.glassmorphism-nav a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+    padding: 10px;
+    z-index: 1;
+}
+
+.glassmorphism-nav a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px);
+    border-radius: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1; /* rec behind the text */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.glassmorphism-nav a:hover::before {
+    opacity: 1;
+}
+
+.header {
+    display: flex;
+    padding: 1em;
+}
+
+.header h1 {
+    flex: 1;
+    position: relative;
+    font-size: 7vw;
+    font-family: "PP Editorial Old";
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 2em;
+
+}
+
+footer > div {
+    flex: 1;
+}
+
+.footer-copy p {
+    width: 50%;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2em;
+    justify-content: flex-end;
+
+}
+
+.img {
+    width: 225px;
+    height: 150px;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+.img:nth-child(1){
+    background: url(nav-1.avif) no repeat 50% 50%;
+    background-size: cover;
+}
+
+.img:nth-child(2){
+    background: url(nav-2.avif) no repeat 50% 50%;
+    background-size: cover;
+}
+
+@media(max-width: 900px) {
+    footer {
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .footer-copy p {
+        width: 100%;
+    }
+
+    .footer-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
